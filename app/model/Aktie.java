@@ -3,7 +3,7 @@ package model;
 import java.util.Random;
 
 /**
- * Created by user on 17.03.2017.
+ *
  */
 public class Aktie {
 
