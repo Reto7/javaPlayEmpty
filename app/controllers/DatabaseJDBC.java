@@ -33,6 +33,13 @@ public class DatabaseJDBC extends Controller {
     // - H:\DATEN\IntelliJ-Play\empty\conf\application.conf
     // - H:\DATEN\IntelliJ-Play\empty\conf\META-INF\persistence.xml  (nur fuer JPA)
     //---------------------------------------------------------------------------------
+    // Generell ist wichtig:
+    // - Controller Methode muss vom Return Type RESULT sein, sonst Fehler im Routing:
+    //     "...routes:10: value findAll is not a member of controllers.DatabaseJDBC"
+    // Fuer JPA ist folgendes wichtig:
+    // - @Entity Klasse muss muss ZWINGEND einen leerer Constructor haben, sonst:
+    //    Caused by: org.hibernate.InstantiationException: No default constructor for entity:  : model.Aktie
+    //---------------------------------------------------------------------------------
 
     // JDBC
     // siehe auch H:\DATEN\IntelliJ-Play\play-java-crud\app\model\ProductJDBC.java
