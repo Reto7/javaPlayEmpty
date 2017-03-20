@@ -1,19 +1,21 @@
 package controllers;
 
 import com.fasterxml.jackson.databind.JsonNode;
-import model.Aktie;
-import play.api.db.Database;
-import play.libs.Json;
-import play.mvc.Controller;
-import play.mvc.Result;
 
-import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.inject.Inject;
+
+import model.Aktie;
+import play.api.db.Database;
+import play.libs.Json;
+import play.mvc.Controller;
+import play.mvc.Result;
 
 /**
  * Created by user on 20.03.2017.
