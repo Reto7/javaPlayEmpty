@@ -1,8 +1,11 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import model.Aktie;
 import play.api.db.Database;
+import play.libs.Json;
 import play.mvc.Controller;
+import play.mvc.Result;
 
 import javax.inject.Inject;
 import java.sql.Connection;
@@ -24,10 +27,20 @@ public class DatabaseJDBC extends Controller {
         this.db = db;
     }
 
+    //---------------------------------------------------------------------------------
+    // fuer DATABASE wird folgende Config benoetigt:
+    // - H:\DATEN\IntelliJ-Play\empty\build.sbt
+    // - H:\DATEN\IntelliJ-Play\empty\conf\application.conf
+    // - H:\DATEN\IntelliJ-Play\empty\conf\META-INF\persistence.xml  (nur fuer JPA)
+    //---------------------------------------------------------------------------------
 
     // JDBC
     // siehe auch H:\DATEN\IntelliJ-Play\play-java-crud\app\model\ProductJDBC.java
-    public static List<Aktie> findAll(){
+
+    // Achtung der Fehler "...routes:10: value findAll is not a member of controllers.DatabaseJDBC"
+    // hat nichts mit dem Routing hier zu tun, sondern mit der Controller Methode! Muss vom Returntyp RESULT sein!!
+
+    public Result findAll(){
         // get connection
         Connection connection = db.getConnection();
         Statement stmt = null;
@@ -58,6 +71,13 @@ public class DatabaseJDBC extends Controller {
             }
         }
         System.out.println("Aktienliste: " +aktienListe.size());
-        return aktienListe;
+
+        //return aktienListe;
+        //
+        // JsonNode : Jackson
+        // Json: Json Helper aus play.libs
+        JsonNode json = Json.toJson(aktienListe);
+
+        return ok(json);
     }
 }

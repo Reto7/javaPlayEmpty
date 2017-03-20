@@ -29,6 +29,13 @@ public class DatabaseJPA extends Controller {
         this.jpaApi = jpaApi;
     }
 
+    //---------------------------------------------------------------------------------
+    // fuer DATABASE wird folgende Config benoetigt:
+    // - H:\DATEN\IntelliJ-Play\empty\build.sbt
+    // - H:\DATEN\IntelliJ-Play\empty\conf\application.conf
+    // - H:\DATEN\IntelliJ-Play\empty\conf\META-INF\persistence.xml  (nur fuer JPA)
+    //---------------------------------------------------------------------------------
+
     // JPA
     // siehe auch H:\DATEN\IntelliJ-Play\play-java-crud\app\controllers\ProductsJPA.java
 

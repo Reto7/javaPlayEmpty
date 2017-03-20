@@ -7,4 +7,7 @@
 GET     /aktienkurs/:isin              controllers.AktienKursController.getKursByISIN(isin: String)
 
 # DATABASE
-GET     /aktienliste1              controllers.DatabaseJDBC.findAll()
+# Achtung der Fehler "...routes:10: value findAll is not a member of controllers.DatabaseJDBC"
+# hat nichts mit dem Routing hier zu tun, sondern mit der Controller Methode! Muss vom Returntyp RESULT sein!!
+GET     /aktienliste1                  controllers.DatabaseJDBC.findAll()
+GET     /aktienliste2                  controllers.DatabaseJPA.findAll()
