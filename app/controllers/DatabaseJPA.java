@@ -41,6 +41,7 @@ public class DatabaseJPA extends Controller {
 
     @Transactional(readOnly = true)
     public Result findAll() {
+        // hierbei muss Aktie als Entity annotiert sein!!
         List<Aktie> aktienListe = (List<Aktie>) jpaApi.em().createQuery("select p from Aktie p").getResultList();
         return ok(Json.toJson(aktienListe));
     }
