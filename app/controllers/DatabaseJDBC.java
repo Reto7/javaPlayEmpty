@@ -57,7 +57,7 @@ public class DatabaseJDBC extends Controller {
 
         try {
             stmt = connection.createStatement();
-            String sql = "select * from aktie_t order by id";
+            String sql = "select * from aktie order by id";
             ResultSet rs = stmt.executeQuery(sql);
             // extract data
             while (rs.next()) {
