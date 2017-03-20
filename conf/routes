@@ -5,3 +5,6 @@
 # http://localhost:9000/aktienkurs/ABC
 # http://localhost:9000/aktienkurs/NESN
 GET     /aktienkurs/:isin              controllers.AktienKursController.getKursByISIN(isin: String)
+
+# DATABASE
+GET     /aktienliste1              controllers.DatabaseJDBC.findAll()

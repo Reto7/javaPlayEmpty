@@ -7,11 +7,18 @@ import java.util.Random;
  */
 public class Aktie {
 
+    int id;
     String name;
     int kurs;
 
     public Aktie(String name) {
         this.name = name;
+    }
+
+    public Aktie(int id, String name, int kurs) {
+        this.id = id;
+        this.name = name;
+        this.kurs = kurs;
     }
 
     public String getName() {
